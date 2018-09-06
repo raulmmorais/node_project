@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Aplicação node com mongodb e angula.",
+  "main": "loader.js",
+  "scripts": {
+    "dev": "nodemon",
+    "production": "pm2, start, loader.js --name backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raulmmorais/node_project.git"
+  },
+  "author": "Raul Morais",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raulmmorais/node_project/issues"
+  },
+  "homepage": "https://github.com/raulmmorais/node_project#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-query-int": "^3.0.0",
+    "loadash": "^1.0.0",
+    "mongoose": "^5.2.13",
+    "mongoose-paginate": "^5.0.3",
+    "node-restful": "^0.2.6",
+    "pm2": "^3.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
