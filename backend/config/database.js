@@ -13,6 +13,10 @@ var options = { //server: { socketOptions: { keepAlive: 300000, connectTimeoutMS
 var mongodbUri = 'mongodb://raul.morais:buldog07@ds018258.mlab.com:18258/db_finance';
 module.exports = mongoose.connect(mongodbUri, options);
 
+mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório"
+mongoose.Error.messages.Number.min = "O '{VALUE} informado é menor que o mínimo de '{MIN}'."
+mongoose.Error.messages.Number.max = "O '{VALUE} informado é maior que o máximo de '{MAX}'."
+mongoose.Error.messages.String.enum = "O '{VALUE} informado não é válido para o atribudo '{PATH}'."
 /*
 var conn = mongoose.connection;
 
