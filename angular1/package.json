@@ -4,7 +4,9 @@
   "description": "Front end do projeto frames web do curso de node com angular",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp",
+    "production": "gulp --production"
   },
   "repository": {
     "type": "git",
@@ -16,7 +18,7 @@
     "url": "https://github.com/raulmmorais/node-express/issues"
   },
   "homepage": "https://github.com/raulmmorais/node-express#readme",
-  "devDependencies":{
+  "devDependencies": {
     "admin-lte": "2.3.11",
     "angular": "1.6.6",
     "angular-animate": "1.6.6",
@@ -31,6 +33,9 @@
     "gulp-htmlmin": "3.0.0",
     "gulp-uglify": "3.0.0",
     "gulp-uglifycss": "1.0.8",
-    "gulp-util": "3.0.8"
+    "gulp-util": "3.0.8",
+    "gulp-watch": "4.3.11",
+    "gulp-webserver": "0.9.1",
+    "run-sequence": "2.2.0"
   }
 }
