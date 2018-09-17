@@ -1,0 +1,16 @@
+<div role="form">
+    <div class="box-body">
+        <field grid="12 6 4" input-id="name" label="Nome" placeholder="Informe o Nome" type="text"
+        model = bcCtrl.billingCycle.name></field>
+        <field grid="12 6 4" input-id="mes" label="Mês" placeholder="Informe o Mês" type="number"
+               model = bcCtrl.billingCycle.month></field>
+        <field grid="12 6 4" input-id="ano" label="Ano" placeholder="Informe o Ano" type="number"
+               model = bcCtrl.billingCycle.year></field>
+    </div>
+    <div class="box-footer">
+        <button class="btn btn-primary" ng-click="bcCtrl.create()">Incluir</button>
+        <button class="btn btn-info">Alterar</button>
+        <button class="btn btn-danger">Excluir</button>
+        <button class="btn btn-default">Alterar</button>
+    </div>
+</div>
