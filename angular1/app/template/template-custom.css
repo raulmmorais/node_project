@@ -3,3 +3,7 @@
   bottom: 0px;
   width: 100%;
 }
+.toast-top-right{
+  top: 105px
+}
+.table-actions{width: 140px;}

@@ -1,6 +1,6 @@
 (function(){
   angular.module('primeiraApp').factory('msgs',[
-    'tastr',
+    'toastr',
     MsgsFactory
   ])
   function MsgsFactory(toastr){
