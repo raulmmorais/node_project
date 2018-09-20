@@ -35,6 +35,8 @@
           $http.put(updateURL, vm.billingCycle).then(function(response){
             msgs.addSuccess("Ciclo Atualizado Com Sucesso")
             vm.refresh()
+          }).catch(function (response) {
+              msgs.addError(response.data.errors)
           })
         }
 
@@ -43,6 +45,8 @@
           $http.delete(deleteUrl, vm.billingCycle).then(function(response){
             msgs.addSuccess("Ciclo Deletado Com Sucesso")
             vm.refresh()
+          }).catch(function (response) {
+              msgs.addError(response.data.errors)
           })
         }
 
