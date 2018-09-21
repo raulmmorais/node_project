@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="debt in bcCtrl.billingCycle.debts">
+    <tr ng-repeat="debt in bcCtrl.billingCycle.debits">
       <td>
         <input type="text" ng-model="debt.name" class="form-control" placeholder="Informe o Nome" ng-readonly="bcCtrl.tabDelete"/>
       </td>
@@ -17,7 +17,13 @@
         <input type="number" ng-model="debt.value" class="form-control" placeholder="Informe o Valor" ng-readonly="bcCtrl.tabDelete"/>
       </td>
       <td>
-        <input type="text" ng-model="debt.status" class="form-control" placeholder="Informe o Status" ng-readonly="bcCtrl.tabDelete">
+        <select class="form-control" ng-model="debt.status" ng-readonly="bcCtrl.tabDelete">
+          <option value="0">Informe o Status</option>
+          <option value="PAGO">Pago</option>
+          <option value="PENDENTE">Pendente</option>
+          <option value="AGENDADO">Agendado</option>
+        </select>
+        <!--<input type="text" ng-model="debt.status" class="form-control" placeholder="Informe o Status" ng-readonly="bcCtrl.tabDelete">-->
       </td>
       <td>
         <button type="button" class="btn btn-success" ng-class="{disabled: bcCtrl.tabDelete}" ng-click="bcCtrl.addDebt($index)"><i class="fa fa-plus"></i></button>
