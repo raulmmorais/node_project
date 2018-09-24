@@ -13,12 +13,13 @@
         <input type="text" ng-model="credit.name" class="form-control" name="name" placeholder="Informe o Nome" ng-readonly="bcCtrl.tabDelete"/>
       </td>
       <td>
-        <input type="number" ng-model="credit.value" class="form-control" name="value" placeholder="Informe o Valor" ng-readonly="bcCtrl.tabDelete"/>
+        <input type="number" ng-model="credit.value" class="form-control" name="value" placeholder="Informe o Valor" ng-readonly="bcCtrl.tabDelete"
+        ng-change="bcCtrl.calcularValores()"/>
       </td>
       <td>
-        <button type="button" class="btn btn-success" ng-class="{disabled: bcCtrl.tabDelete}" ng-click="bcCtrl.addCredit($index)"><i class="fa fa-plus"></i></button>
-        <button type="button" class="btn btn-warning" ng-class="{disabled: bcCtrl.tabDelete}" ng-click="bcCtrl.cloneCredit($index, credit)"><i class="fa fa-clone"></i></button>
-        <button type="button" class="btn btn-danger" ng-class="{disabled: bcCtrl.tabDelete}" ng-click="bcCtrl.deleteCredit($index)"><i class="fa fa-trash-o"></i></button>
+        <button type="button" class="btn btn-success" ng-class="{disabled: bcCtrl.tabDelete}" ng-disabled="bcCtrl.tabDelete" ng-click="bcCtrl.addCredit($index)"><i class="fa fa-plus"></i></button>
+        <button type="button" class="btn btn-warning" ng-class="{disabled: bcCtrl.tabDelete}" ng-disabled="bcCtrl.tabDelete" ng-click="bcCtrl.cloneCredit($index, credit)"><i class="fa fa-clone"></i></button>
+        <button type="button" class="btn btn-danger"  ng-class="{disabled: bcCtrl.tabDelete}" ng-disabled="bcCtrl.tabDelete" ng-click="bcCtrl.deleteCredit($index)"><i class="fa fa-trash-o"></i></button>
       </td>
     </tr>
   </tbody>
