@@ -12,23 +12,33 @@
 
         vm.refresh = function(){
           const page = parseInt($location.search().page) || 1
-          console.log(page);
           $http.get(`${url}?skip=${(page - 1) * 5}&limit=5`).then(function(response){
             vm.billingCycle = {credits: [{}], debits:[{}]}
             vm.billingCycles = response.data
             vm.calcularValores()
             tabs.show(vm, {tabList: true, tabCreate: true})
+            vm.pages = vm.getPages()
 
-            $http.get(`${url}/count`).then(function(response){
+            /*$http.get(`${url}/count`).then(function(response){
               vm.pages = Math.ceil(response.data.value/5)
-              console.log(vm.pages);
             }).catch(function(response){
-              console.log(response.data)
               msgs.addError(response.data.errors)
-            })
+            })*/
+
+            vm.tss = vm.pages || 2
           }).catch(function(response) {
-            console.log(response.data)
             msgs.addError(response.data.errors)
+          })
+        }
+
+        vm.getPages = function(){
+          $http.get(`${url}/count`).then(function(response){
+            const pages = Math.ceil(response.data.value/5)
+            console.log("getPages", pages);
+            return pages
+          }).catch(function(response){
+            msgs.addError(response.data.errors)
+            return null
           })
         }
 
@@ -37,7 +47,6 @@
             msgs.addSuccess("Operação Realizada com Sucesso")
             vm.refresh()
           }).catch(function(response){
-            console.log(response)
             msgs.addError(response.data.errors)
           })
         }
