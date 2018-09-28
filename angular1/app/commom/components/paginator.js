@@ -16,7 +16,7 @@
           this.hasNext = this.current < this.nPages
 
           this.isCurrent = function(i){
-            return this.current == 1
+            return this.current == i
           }
         }
       }
